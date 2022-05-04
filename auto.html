@@ -21,8 +21,27 @@ li a {
   padding: 8px;
   background-color: #dddddd;
 }
-  
+
+
+
+
 </style>
+
+<script>
+  function click1() {
+    if (typeof(Storage) !== "undefined") {
+      if (localStorage.clickcount) {
+        localStorage.clickcount = Number(localStorage.clickcount)+1;
+      } else {
+        localStorage.clickcount = 1;
+      }
+      document.getElementById("result").innerHTML = "Clicks:" + localStorage.clickcount + " time(s).";
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+  </script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,12 +66,16 @@ li a {
     </div>
   </div>
 </nav>
-  
+
 
 <h1>automatic mode </h1>
+<p><button onclick="click1()"
+type ="button">"waldo"</p>
+
+<div id="result"></div>
 <h2>coming soon</h2>
 <P>the finding team needs to finish this :/</P>
-<button type="button"> <img src="https://bit.ly/3BF9FD7" height ="80" width="100" /></button>
+
   
 </body>
 </html>

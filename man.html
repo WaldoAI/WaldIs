@@ -80,6 +80,34 @@ li a {
 }
 
 </style>
+<script>
+  function click1() {
+    if (typeof(Storage) !== "undefined") {
+      if (localStorage.clickcount) {
+        localStorage.clickcount = Number(localStorage.clickcount)+1;
+      } else {
+        localStorage.clickcount = 1;
+      }
+      document.getElementById("result").innerHTML = "Clicks:" + localStorage.clickcount + " time(s).";
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+
+  function click2() {
+    if (typeof(Storage) !== "undefined") {
+      if (localStorage.clickcount) {
+        localStorage.clickcount = Number(localStorage.clickcount)+1;
+      } else {
+        localStorage.clickcount = 1;
+      }
+      document.getElementById("result").innerHTML = "Clicks:" + localStorage.clickcount + " time(s).";
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+  </script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -111,12 +139,19 @@ li a {
 <p>Hover over waldo, he will turn pink</p>
 
 <div class="container">
+  <p><button onclick="click1()"
+    type ="button"></p>
+    
   <img src="waldo2.png" alt="waldo puzzle" style="width:100%; ">
   <button class="btn2">Button</button>
 </div>
-
+  <div id="result"></div>
 <div class="container">
+  <p><button onclick="click2()"
+    type ="button"></p>
   <img src="waldo3.jfif" alt="waldo puzzle2" style="width:100%">
+  <button class="btn2">Button</button>
+  <div id="result"></div>
   <button class="btn">Button</button>
 </div>
   
