@@ -37,3 +37,11 @@ Session(app)
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/auto")
+def auto():
+    return render_template("auto.html")
+
+@app.route("/man")
+def man():
+    return render_template("man.html")
