@@ -100,12 +100,12 @@
 
     function click2() {
       if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount) {
-          localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        if (localStorage.clickcount2) {
+          localStorage.clickcount2 = Number(localStorage.clickcount2) + 1;
         } else {
-          localStorage.clickcount = 1;
+          localStorage.clickcount2 = 1;
         }
-        document.getElementById("result").innerHTML = "Clicks:" + localStorage.clickcount + " time(s).";
+        document.getElementById("result").innerHTML = "Clicks:" + localStorage.clickcount2 + " time(s).";
       } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
       }
@@ -151,14 +151,15 @@
     <button class="btn2">Button</button>
   </div>
   <div id="result"></div>
+
 <div class="container">
   <p><button onclick="click2()"
     type ="button"></p>
   <img src="static/waldo3.jfif" alt="waldo puzzle2" style="width:100%">
   <button class="btn2">Button</button>
-  <div id="result2"></div>
   <button class="btn">Button</button>
 </div>
+  <div id="result2"></div>
   
 </body>
 
