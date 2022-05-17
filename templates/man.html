@@ -7,82 +7,18 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-
   <style>
-    .container {
-      position: relative;
-      width: 400px;
-      max-width: 400px;
-    }
-
-    .container img {
-      width: 1024px;
-      height: auto;
-      float: left;
-    }
-
-    .container .btn {
-      position: absolute;
-      top: 10%;
-      left: 25%;
-      transform: translate(80px, 443px);
-      background-color: limegreen;
-      color: white;
-      font-size: 0px;
-      padding: 10px 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      text-align: center;
-      opacity: .0;
-    }
-
-    .container .btn:hover {
-      background-color: hotpink;
-      opacity: 1;
-      cursor: default;
-    }
-
-    .container .btn2 {
-      position: absolute;
-      top: 43%;
-      left: 19%;
-      transform: translate(-50%, 250%);
-      -ms-transform: translate(-50%, -50%);
-      background-color: darkred;
-      color: white;
-      font-size: 0px;
-      padding: 10px 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      text-align: center;
-      opacity: .0;
-    }
-
-    .container .btn2:hover {
-      background-color: hotpink;
-      opacity: 1;
-      cursor: default;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 90;
-      overflow: hidden;
-
-    }
-
-    li {
-      float: left;
-    }
-
-    li a {
-      display: block;
-      padding: 8px;
-      background-color: #dddddd;
-    }
+  button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+  }
+  img{
+    cursor: pointer;
+  }
   </style>
   <script>
     function click1() {
@@ -92,9 +28,9 @@
         } else {
           localStorage.clickcount = 1;
         }
-        document.getElementById("result").innerHTML = "Clicks:" + localStorage.clickcount + " time(s).";
+        document.getElementById("result1").innerHTML = "You made " + localStorage.clickcount + " failed attempts";
       } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        document.getElementById("result1").innerHTML = "your browser does not support web storage";
       }
     }
 
@@ -105,16 +41,16 @@
         } else {
           localStorage.clickcount2 = 1;
         }
-        document.getElementById("result").innerHTML = "Clicks:" + localStorage.clickcount2 + " time(s).";
+        document.getElementById("result2").innerHTML = "You made " + localStorage.clickcount2 + " failed attempts";
       } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        document.getElementById("result2").innerHTML = "your browser does not support web storage";
       }
     }
   </script>
 
 </head>
 
-<body>
+<body style="background-color:rgb(177, 104, 106);">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">waldOS</a>
@@ -142,24 +78,26 @@
 
   <h1>Manual mode</h1>
   <h2>Find waldo yourself!</h2>
-  <p>Hover over waldo, he will turn pink</p>
 
-  <div class="container">
-    <p><button onclick="click1()" type="button"></p>
-
-    <img src="static/waldo2.png" alt="waldo puzzle" style="width:100%; ">
-    <button class="btn2">Button</button>
+  <div style="position: static; left: 10px; top: 40px;"> 
+    <img src="waldo3.jfif" width="600" height="100%" onclick="click2();" />
+    <button type="button" 
+      style="position: relative;  right: 330px; top: 70px;" 
+      onclick="alert('You found waldo!')"> . </button>
+    <div id="result2" ></div>
   </div>
-  <div id="result"></div>
+  
+  <br>
+  
+  <div style="position: static; left: 10px; top: 40px;"> 
+    <img src="waldo2.png" width="600" height="100%" onclick="click1();" />
+    <button type="button" 
+      style="position: relative;  right: 330px; top: 70px;" 
+      onclick="alert('You found waldo!')"> . </button>
+    <div id="result1" ></div>
+  </div>
+  
 
-<div class="container">
-  <p><button onclick="click2()"
-    type ="button"></p>
-  <img src="static/waldo3.jfif" alt="waldo puzzle2" style="width:100%">
-  <button class="btn2">Button</button>
-  <button class="btn">Button</button>
-</div>
-  <div id="result2"></div>
   
 </body>
 
