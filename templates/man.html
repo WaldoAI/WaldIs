@@ -15,7 +15,7 @@
     overflow: hidden;
     outline: none;
     position: absolute;
-    z-index: 999;
+    font-size: 20px;
   }
   img{
     cursor: pointer;
@@ -101,9 +101,9 @@
     <h1>Manual mode</h1>
     <h2>Find waldo yourself!</h2>
 
-    <div id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
-      <p id="rcorners2">level: 1</p>
-      <img src="waldo3.jfif" width="600" height="100%" onclick="click2();" />
+    <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+      <p float="right" id="rcorners2">level: 1</p>
+      <img src="static\waldo3.jfif" width="600" height="100%" onclick="click2();" />
       <button type="button" 
       style="position: relative; right: -280px; top: -152px;" 
       onclick="alert('You found waldo!')"> . </button>
@@ -112,12 +112,12 @@
 
   
   <br>
-  <div id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+  <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
     <p id="rcorners2">level: 2</p>
-    <img src="waldo2.png" width="600" height="100%" onclick="click1();" />
+    <img src="static\waldo2.png" width="600" height="100%" onclick="click1();" />
     <button type="button" 
-      style="position: relative;  right: -220px; top: 500x;" 
-      onclick="alert('You found waldo!')"> . </button>
+    style="position: relative;  right: -220px; top: -500x;" 
+    onclick="alert('You found waldo!')"> . </button>
     <div style="position: absolute;" id="result1" ></div>
   </div>
   
