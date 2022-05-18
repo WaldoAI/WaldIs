@@ -9,16 +9,38 @@
     crossorigin="anonymous"></script>
   <style>
   button {
-    background-color: transparent;
+    background-color: limegreen;
     background-repeat: no-repeat;
     border: none;
     overflow: hidden;
     outline: none;
     position: absolute;
+    z-index: 999;
   }
   img{
     cursor: pointer;
   }
+   body {
+  
+  }
+  #rcorners1 {
+    border-radius: 25px;
+    background: rgb(217, 50, 50);
+    padding: 20px; 
+    width: 650px;
+  }
+  #rcorners2 {
+    border-radius: 15px;
+    background: white;
+    padding: 10px; 
+    width: 15%;
+
+  }
+  p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
   </style>
   <script>
     function click1() {
@@ -50,7 +72,7 @@
 
 </head>
 
-<body style="background-color:rgb(177, 104, 106);">
+<body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">waldOS</a>
@@ -75,26 +97,28 @@
       </div>
     </div>
   </nav>
+  
+    <h1>Manual mode</h1>
+    <h2>Find waldo yourself!</h2>
 
-  <h1>Manual mode</h1>
-  <h2>Find waldo yourself!</h2>
-
-  <div style="position: static; left: 10px; top: 40px;"> 
-    <img src="waldo3.jfif" width="600" height="100%" onclick="click2();" />
-    <button type="button" 
-      style="position: relative;  right: 330px; top: 70px;" 
+    <div id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+      <p id="rcorners2">level: 1</p>
+      <img src="waldo3.jfif" width="600" height="100%" onclick="click2();" />
+      <button type="button" 
+      style="position: relative; right: -280px; top: -152px;" 
       onclick="alert('You found waldo!')"> . </button>
     <div id="result2" ></div>
   </div>
+
   
   <br>
-  
-  <div style="position: static; left: 10px; top: 40px;"> 
+  <div id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+    <p id="rcorners2">level: 2</p>
     <img src="waldo2.png" width="600" height="100%" onclick="click1();" />
     <button type="button" 
-      style="position: relative;  right: 330px; top: 70px;" 
+      style="position: relative;  right: -220px; top: 500x;" 
       onclick="alert('You found waldo!')"> . </button>
-    <div id="result1" ></div>
+    <div style="position: absolute;" id="result1" ></div>
   </div>
   
 
