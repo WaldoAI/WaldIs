@@ -16,9 +16,11 @@
     outline: none;
     position: absolute;
     font-size: 20px;
+    cursor: crosshair;
   }
   img{
     cursor: pointer;
+    border-radius: 25px
   }
    body {
   
@@ -33,12 +35,24 @@
     border-radius: 15px;
     background: white;
     padding: 10px; 
-    width: 15%;
+    width: auto;
 
   }
   p{
     font-size: 20px;
     font-weight: bold;
+    float: left;
+    display:inline;
+    word-wrap: break-word;
+  }
+  #ps{
+    font-size: 20px;
+    font-weight: bold;
+    float: right;
+    border-radius: 15px;
+    background: white;
+    padding: 10px; 
+    width: auto;
   }
 
   </style>
@@ -66,6 +80,56 @@
         document.getElementById("result2").innerHTML = "You made " + localStorage.clickcount2 + " failed attempts";
       } else {
         document.getElementById("result2").innerHTML = "your browser does not support web storage";
+      }
+    }
+      function click3() {
+      if (typeof (Storage) !== "undefined") {
+        if (localStorage.clickcount3) {
+          localStorage.clickcount3 = Number(localStorage.clickcount3) + 1;
+        } else {
+          localStorage.clickcount3 = 1;
+        }
+        document.getElementById("result3").innerHTML = "You made " + localStorage.clickcount3 + " failed attempts";
+      } else {
+        document.getElementById("result3").innerHTML = "your browser does not support web storage";
+      }
+    }
+
+          function click4() {
+      if (typeof (Storage) !== "undefined") {
+        if (localStorage.clickcount4) {
+          localStorage.clickcount4 = Number(localStorage.clickcount4) + 1;
+        } else {
+          localStorage.clickcount4 = 1;
+        }
+        document.getElementById("result4").innerHTML = "You made " + localStorage.clickcount4 + " failed attempts";
+      } else {
+        document.getElementById("result4").innerHTML = "your browser does not support web storage";
+      }
+    }
+
+     function click5() {
+      if (typeof (Storage) !== "undefined") {
+        if (localStorage.clickcount5) {
+          localStorage.clickcount5 = Number(localStorage.clickcount5) + 1;
+        } else {
+          localStorage.clickcount5 = 1;
+        }
+        document.getElementById("result5").innerHTML = "You made " + localStorage.clickcount5 + " failed attempts";
+      } else {
+        document.getElementById("result5").innerHTML = "your browser does not support web storage";
+      }
+    }
+       function click6() {
+      if (typeof (Storage) !== "undefined") {
+        if (localStorage.clickcount6) {
+          localStorage.clickcount6 = Number(localStorage.clickcount6) + 1;
+        } else {
+          localStorage.clickcount6 = 1;
+        }
+        document.getElementById("result6").innerHTML = "You made " + localStorage.clickcount6 + " failed attempts";
+      } else {
+        document.getElementById("result6").innerHTML = "your browser does not support web storage";
       }
     }
   </script>
@@ -102,27 +166,58 @@
     <h2>Find waldo yourself!</h2>
 
     <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
-      <p float="right" id="rcorners2">level: 1</p>
+      <p float="right" id="rcorners2">level: 1</p> <div id="result2" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
       <img src="static\waldo3.jfif" width="600" height="100%" onclick="click2();" />
       <button type="button" 
       style="position: relative; right: -280px; top: -152px;" 
       onclick="alert('You found waldo!')"> . </button>
-    <div id="result2" ></div>
+
+  </div>
+
+  <br>
+    <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+      <p float="right" id="rcorners2">level: 2</p> <div id="result3" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
+    <img src="static\waldo4.jpg" width="600" height="100%" onclick="click3();" />
+    <button type="button" 
+    style="position: relative;  right: -525px; top: -258px;" 
+    onclick="alert('You found waldo!')"> . </button>
   </div>
   
   <br>
-
+  
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
-    <p id="rcorners2">level: 2</p>
+      <p float="right" id="rcorners2">level: 3</p> <div id="result1" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
     <img src="static\waldo2.png" width="600" height="100%" onclick="click1();" />
     <button type="button" 
     style="position: relative;  right: -100px; top: -370px;" 
     onclick="alert('You found waldo!')"> . </button>
-    <div style="position: absolute;" id="result1" ></div>
   </div>
-
-
+    <br>
   
+  <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+      <p float="right" id="rcorners2">level: 4</p> <div id="result4" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
+    <img src="static\waldo5.jpg" width="600" height="100%" onclick="click4();" />
+    <button type="button" 
+    style="position: relative;  right: -166px; top: -80px;" 
+    onclick="alert('You found waldo!')"> . </button>
+  </div>
+    <br>
+  <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+      <p float="right" id="rcorners2">level: 5</p> <div id="result5" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
+    <img src="static\waldo6.jpg" width="600" height="100%" onclick="click5();" />
+    <button type="button" 
+    style="position: relative;  right: -135px; top: -400px;" 
+    onclick="alert('You found waldo!')"> . </button>
+  </div>
+    <br>
+  <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
+      <p float="right" id="rcorners2">level: 6</p> <div id="result6" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
+    <img src="static\waldo7.jpg" width="600" height="100%" onclick="click6();" />
+    <button type="button" 
+    style="position: relative;  right: -335px; top: -280px;" 
+    onclick="alert('You found waldo!')"> . </button>
+  </div>
+    <br>
 </body>
 
 </html>
