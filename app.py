@@ -41,6 +41,7 @@ def index():
 @app.route("/auto")
 def auto():
     return render_template("auto.html")
+    
 
 @app.route("/man")
 def man():
