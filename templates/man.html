@@ -20,18 +20,18 @@
       if(timerID == -1){
         timerID = setInterval(tick, 1000);
         }
-    }
-            function stop() {
-                if(timerID != -1){
-                    clearInterval(timerID)
-                    timerID = -1
-                }
-            }
-            function reset() {
-                stop();
-                timeElapsed = -1;
-                tick()
-            }
+     }
+     function stop() {
+      if(timerID != -1){
+      clearInterval(timerID)
+      timerID = -1
+      }
+     }
+      function reset() {
+        stop();
+        timeElapsed = -1;
+        tick()
+      }
         </script>
 
     </script>
