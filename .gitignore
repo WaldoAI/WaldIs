@@ -1,1 +1,5 @@
 __pycache__
+venv
+
+# mac shit
+.DS_Store
