@@ -78,6 +78,10 @@
     width: auto;
   }
 
+  :root{
+    --correct: 0;
+  }
+
   </style>
   <script>
 
@@ -319,6 +323,14 @@
     style="position: relative;  right: -135px; top: -120px;" 
     onclick="alert('You found waldo!')"> . </button>
   </div>
+<div style="position: static">
+  <div>Seconds: <span id="time">0</span></div>
+  <input type="button" id="startTimer" value="Start Timer" onclick="start();"><br/>
+  <input type="button" id="stopTimer" value="Stop Timer"  onclick="stop();"><br/>
+  <input type="button" id="resetTimer" value="Reset Timer"  onclick="reset();"><br/>
+
+</div>
+
 </body>
 
 </html>
