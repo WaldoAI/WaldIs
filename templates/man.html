@@ -7,7 +7,32 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+   var timeElapsed = 0;
+    var timerID = -1;
+    function tick() {
+      timeElapsed++
+      document.getElementById("time").innerHTML = timeElapsed;
+      }
+
+    function start() {
+      if(timerID == -1){
+        timerID = setInterval(tick, 1000);
+        }
+    }
+    function stop() {
+       if(timerID != -1){
+       clearInterval(timerID)
+       timerID = -1
+      }
+     }
+     function reset() {
+       stop();
+       timeElapsed = -1;
+       tick()
+     }
+
+  </script>
   <style>
   button {
     background-color: transparent;
@@ -17,16 +42,14 @@
     outline: none;
     position: absolute;
     font-size: 20px;
-    cursor: crosshair;
   }
   img{
     cursor: pointer;
     border-radius: 25px
   }
-   body {
-  
-  }
+
   #rcorners1 {
+    margin: auto;
     border-radius: 25px;
     background: rgb(217, 50, 50);
     padding: 20px; 
@@ -55,8 +78,13 @@
     width: auto;
   }
 
+  :root{
+    --correct: 0;
+  }
+
   </style>
   <script>
+
     function click1() {
       if (typeof (Storage) !== "undefined") {
         if (localStorage.clickcount) {
@@ -187,6 +215,7 @@
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">waldOS</a>
@@ -294,6 +323,14 @@
     style="position: relative;  right: -135px; top: -120px;" 
     onclick="alert('You found waldo!')"> . </button>
   </div>
+<div style="position: sticky; left:0%; top:0%;">
+  <div>Seconds: <span id="time">0</span></div>
+  <input type="button" id="startTimer" value="Start Timer" onclick="start();"><br/>
+  <input type="button" id="stopTimer" value="Stop Timer"  onclick="stop();"><br/>
+  <input type="button" id="resetTimer" value="Reset Timer"  onclick="reset();"><br/>
+
+</div>
+
 </body>
 
 </html>
