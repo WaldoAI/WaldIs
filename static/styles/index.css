@@ -21,3 +21,12 @@ h5 {
   display: flex;
   width: 35%;
 }
+
+.inline-link {
+  color: red;
+}
+
+.inline-link:hover {
+  background-color: red;
+  color: white;
+}
