@@ -3,13 +3,13 @@ import os
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from tempfile import mkdtemp
-from model.find_wally import find_wally
+#from model.find_wally import find_wally
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 import requests
 import json
 import re
-from model.find_wally import find_wally
+
 
 # Configure application
 app = Flask(__name__)
