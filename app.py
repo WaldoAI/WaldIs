@@ -52,8 +52,11 @@ def auto():
 
 @app.route("/generate", methods=['GET', 'POST'])
 def generate():
-    generator()
-    return render_template("generate.html")
+    if request.method == "POST":  
+        generator()
+        return render_template("generate.html")
+    else:
+        return render_template("generate.html")
     
     
 
