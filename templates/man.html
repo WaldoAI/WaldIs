@@ -5,10 +5,12 @@
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>waldOS | Manual</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous">
-   var timeElapsed = 0;
+    crossorigin="anonymous"></script>
+    <script>
+    var timeElapsed = 0;
     var timerID = -1;
     function tick() {
       timeElapsed++
@@ -19,20 +21,21 @@
       if(timerID == -1){
         timerID = setInterval(tick, 1000);
         }
-    }
-    function stop() {
-       if(timerID != -1){
-       clearInterval(timerID)
-       timerID = -1
+     }
+     function stop() {
+      if(timerID != -1){
+      clearInterval(timerID)
+      timerID = -1
       }
      }
-     function reset() {
-       stop();
-       timeElapsed = -1;
-       tick()
-     }
+      function reset() {
+        stop();
+        timeElapsed = -1;
+        tick()
+      }
+        </script>
 
-  </script>
+    </script>
   <style>
   button {
     background-color: transparent;
@@ -264,7 +267,7 @@
       <p float="right" id="rcorners2">level: 2</p> <div id="result3" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
     <img src="static\waldo4.jpg" width="600" height="100%" onclick="click3();" />
     <button type="button" 
-    style="position: relative;  right: -525px; top: -258px;" 
+    style="position: relative; right: -475px; top: -335px;" 
     onclick="alert('You found waldo!')"> . </button>
   </div>
   <br>

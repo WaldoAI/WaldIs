@@ -4,11 +4,13 @@ from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from generate.maker import generate as generator
 from tempfile import mkdtemp
+#from model.find_wally import find_wally
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 import requests
 import json
 import re
+
 
 # Configure application
 app = Flask(__name__)
@@ -40,13 +42,25 @@ def index():
 
 @app.route("/auto")
 def auto():
-    return render_template("auto.html")
+    if request.method == "POST":
+            image2  = find_wally(requests.form.get("filename"))
+            return render_template("auto.html", image2 = image2)
+    else:
+        return render_template("auto.html")
+
+
 
 @app.route("/generate", methods=['GET', 'POST'])
 def generate():
     generator()
     return render_template("generate.html")
+    
+    
 
 @app.route("/man")
 def man():
-    return render_template("man.html")
+    if request.method == "POST":
+        return render_template("man.html")
+    else:
+        return render_template("man.html")
+    
