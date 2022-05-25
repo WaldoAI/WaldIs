@@ -2,6 +2,7 @@ import os
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
+from generate.maker import generate as generator
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -40,7 +41,11 @@ def index():
 @app.route("/auto")
 def auto():
     return render_template("auto.html")
-    
+
+@app.route("/generate", methods=['GET', 'POST'])
+def generate():
+    generator()
+    return render_template("generate.html")
 
 @app.route("/man")
 def man():
