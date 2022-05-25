@@ -2,6 +2,7 @@ import os
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
+from generate.maker import generate as generator
 from tempfile import mkdtemp
 #from model.find_wally import find_wally
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
@@ -42,10 +43,18 @@ def index():
 @app.route("/auto")
 def auto():
     if request.method == "POST":
-        image2  = find_wally(requests.form.get("filename"))
-        return render_template("auto.html", image2 = image2)
+            image2  = find_wally(requests.form.get("filename"))
+            return render_template("auto.html", image2 = image2)
     else:
         return render_template("auto.html")
+
+
+
+@app.route("/generate", methods=['GET', 'POST'])
+def generate():
+    generator()
+    return render_template("generate.html")
+    
     
 
 @app.route("/man")
