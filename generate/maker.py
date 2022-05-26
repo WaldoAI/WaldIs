@@ -14,7 +14,7 @@ for backgrounds in glob.iglob(backgrounds_path + '/*.png', recursive=True):
     imagearray.append(Image.open(backgrounds))
 def generate():
     background = imagearray[random.randrange(0,len(imagearray))]
-    background = background.resize((4000,4000))
+    background = background.resize((2000,2000))
     waldo = Image.open(directory_path + '/waldo.png')
     width, height = background.size
     smalldo = waldo.resize((150,150))
@@ -25,4 +25,4 @@ def generate():
     background.paste(smalldo,coordinates,smalldo.convert('RGBA')
     )
     background.save(directory_path.replace('/generate','') + "/static/output.png")
-    return background
+    return coordinates
