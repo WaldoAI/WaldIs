@@ -40,7 +40,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 def index():
     return render_template("index.html")
 
-@app.route("/auto")
+@app.route("/auto", methods =  ['GET','POST'])
 def auto():
     if request.method == "POST":
             image2  = find_wally(requests.form.get("filename"))
