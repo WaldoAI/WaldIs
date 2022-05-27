@@ -54,7 +54,7 @@ def auto():
 def generate():
     if request.method == "POST":  
         temp = generator()
-        return render_template("generate.html",value1=temp[0],value2=temp[1])
+        return render_template("generate.html",value1=(temp[0] * 0.18575)-355.5,value2=743 - (temp[1] * 0.18575))
     else:
         return render_template("generate.html")
     
