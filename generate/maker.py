@@ -35,4 +35,4 @@ def generate():
         background.save(directory_path.replace('\\generate', '') + "\\static\\output.png")
     else:
         background.save(directory_path.replace('/generate', '') + "/static/output.png")
-    return background
+    return coordinates

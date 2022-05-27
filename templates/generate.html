@@ -38,6 +38,20 @@ li a {
             margin: auto;
         }
 
+  button {
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+    font-size: 20px;
+  }
+  img{
+    cursor: pointer;
+    border-radius: 25px
+  }
+
 </style>
 
 
@@ -76,7 +90,11 @@ li a {
   <input type="submit" value="Generate Waldo" name="Generate Waldo"/>
 <div class="imgbox">
     <img class="center-fit" src='/static/output.png'>
+    <button type="button" 
+    style="position: relative; left: {{value1}}px; top: {{value2}}px;"
+    onclick="alert('You found waldo!')"> . </button>
 </div>
+<h2>I like the animal: {{ value2 }}</h2>
   
 </body>
 </html>
