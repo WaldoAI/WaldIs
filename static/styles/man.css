@@ -1,0 +1,15 @@
+.failedAttempts{
+    float:right; 
+    border-radius: 15px; 
+    background: white; 
+    padding: 10px; 
+    width: auto; 
+    font-size: 20px; 
+    font-weight: bold;
+  }
+
+.rCorner{
+  position: static; 
+  left: 10px; 
+  top: 40px;
+}
