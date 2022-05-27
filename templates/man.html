@@ -96,130 +96,19 @@
 
   </style>
   <script>
+    function onClick(num){
+      var clickCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-    function click1() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount) {
-          localStorage.clickcount = Number(localStorage.clickcount) + 1;
-        } else {
-          localStorage.clickcount = 1;
+      if(typeof (Storage) !== "undefined"){
+        if(localStorage.getItem("clickCount") !== null){
+          clickCounts = JSON.parse(localStorage.getItem("clickCount"));
         }
-        document.getElementById("result1").innerHTML = "You made " + localStorage.clickcount + " failed attempts";
-      } else {
-        document.getElementById("result1").innerHTML = "your browser does not support web storage";
-      }
-    }
-    function click2() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount2) {
-          localStorage.clickcount2 = Number(localStorage.clickcount2) + 1;
-        } else {
-          localStorage.clickcount2 = 1;
-        }
-        document.getElementById("result2").innerHTML = "You made " + localStorage.clickcount2 + " failed attempts";
-      } else {
-        document.getElementById("result2").innerHTML = "your browser does not support web storage";
-      }
-    }
-      function click3() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount3) {
-          localStorage.clickcount3 = Number(localStorage.clickcount3) + 1;
-        } else {
-          localStorage.clickcount3 = 1;
-        }
-        document.getElementById("result3").innerHTML = "You made " + localStorage.clickcount3 + " failed attempts";
-      } else {
-        document.getElementById("result3").innerHTML = "your browser does not support web storage";
-      }
-    }
+        clickCounts[num - 1] = clickCounts[num - 1] + 1;
 
-          function click4() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount4) {
-          localStorage.clickcount4 = Number(localStorage.clickcount4) + 1;
-        } else {
-          localStorage.clickcount4 = 1;
-        }
-        document.getElementById("result4").innerHTML = "You made " + localStorage.clickcount4 + " failed attempts";
-      } else {
-        document.getElementById("result4").innerHTML = "your browser does not support web storage";
-      }
-    }
-
-     function click5() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount5) {
-          localStorage.clickcount5 = Number(localStorage.clickcount5) + 1;
-        } else {
-          localStorage.clickcount5 = 1;
-        }
-        document.getElementById("result5").innerHTML = "You made " + localStorage.clickcount5 + " failed attempts";
-      } else {
-        document.getElementById("result5").innerHTML = "your browser does not support web storage";
-      }
-    }
-       function click6() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount6) {
-          localStorage.clickcount6 = Number(localStorage.clickcount6) + 1;
-        } else {
-          localStorage.clickcount6 = 1;
-        }
-        document.getElementById("result6").innerHTML = "You made " + localStorage.clickcount6 + " failed attempts";
-      } else {
-        document.getElementById("result6").innerHTML = "your browser does not support web storage";
-      }
-    }
-
-      function click7() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount7) {
-          localStorage.clickcount7 = Number(localStorage.clickcount7) + 1;
-        } else {
-          localStorage.clickcount7 = 1;
-        }
-        document.getElementById("result7").innerHTML = "You made " + localStorage.clickcount7 + " failed attempts";
-      } else {
-        document.getElementById("result7").innerHTML = "your browser does not support web storage";
-      }
-    }
-
-          function click8() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount8) {
-          localStorage.clickcount8 = Number(localStorage.clickcount8) + 1;
-        } else {
-          localStorage.clickcount8 = 1;
-        }
-        document.getElementById("result8").innerHTML = "You made " + localStorage.clickcount8 + " failed attempts";
-      } else {
-        document.getElementById("result8").innerHTML = "your browser does not support web storage";
-      }
-    }
-
-     function click9() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount9) {
-          localStorage.clickcount9 = Number(localStorage.clickcount9) + 1;
-        } else {
-          localStorage.clickcount9 = 1;
-        }
-        document.getElementById("result9").innerHTML = "You made " + localStorage.clickcount9 + " failed attempts";
-      } else {
-        document.getElementById("result9").innerHTML = "your browser does not support web storage";
-      }
-    }
-       function click10() {
-      if (typeof (Storage) !== "undefined") {
-        if (localStorage.clickcount10) {
-          localStorage.clickcount10 = Number(localStorage.clickcount10) + 1;
-        } else {
-          localStorage.clickcount10 = 1;
-        }
-        document.getElementById("result10").innerHTML = "You made " + localStorage.clickcount10 + " failed attempts";
-      } else {
-        document.getElementById("result10").innerHTML = "your browser does not support web storage";
+        localStorage.setItem("clickCount", JSON.stringify(clickCounts));
+        document.getElementById("result" + num).innerHTML = "You made " + clickCounts[num - 1] + " failed attempts";
+      }else{
+        document.getElementById("result" + num).innerHTML = "your browser does not support web storage";
       }
     }
   </script>
@@ -262,7 +151,7 @@
 
     <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 1</p> <div id="result2" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-      <img src="static\waldo3.jfif" width="600" height="100%" onclick="click2();" />
+      <img src="static\waldo3.jfif" width="600" height="100%" onclick="onClick(2);" />
       <button type="button" 
       style="position: relative; right: -280px; top: -152px;" 
       onclick="alert('You found waldo!')"> . </button>
@@ -270,7 +159,7 @@
   <br>
     <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 2</p> <div id="result3" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo4.jpg" width="600" height="100%" onclick="click3();" />
+    <img src="static\waldo4.jpg" width="600" height="100%" onclick="onClick(3);" />
     <button type="button" 
     style="position: relative; right: -475px; top: -335px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -278,7 +167,7 @@
   <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 3</p> <div id="result1" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo2.png" width="600" height="100%" onclick="click1();" />
+    <img src="static\waldo2.png" width="600" height="100%" onclick="onClick(1);" />
     <button type="button" 
     style="position: relative;  right: -100px; top: -370px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -286,7 +175,7 @@
     <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 4</p> <div id="result4" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo5.jpg" width="600" height="100%" onclick="click4();" />
+    <img src="static\waldo5.jpg" width="600" height="100%" onclick="onClick(4);" />
     <button type="button" 
     style="position: relative;  right: -166px; top: -80px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -294,7 +183,7 @@
     <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 5</p> <div id="result5" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo6.jpg" width="600" height="100%" onclick="click5();" />
+    <img src="static\waldo6.jpg" width="600" height="100%" onclick="onClick(5);" />
     <button type="button" 
     style="position: relative;  right: -135px; top: -400px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -302,7 +191,7 @@
     <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 6</p> <div id="result6" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo7.jpg" width="600" height="100%" onclick="click6();" />
+    <img src="static\waldo7.jpg" width="600" height="100%" onclick="onClick(6);" />
     <button type="button" 
     style="position: relative;  right: -335px; top: -280px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -310,7 +199,7 @@
     <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 7</p> <div id="result7" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo8.jpg" width="600" height="100%" onclick="click7();" />
+    <img src="static\waldo8.jpg" width="600" height="100%" onclick="onClick(7);" />
     <button type="button" 
     style="position: relative;  right: -500px; top: -200px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -318,7 +207,7 @@
     <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 8</p> <div id="result8" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo9.jpg" width="600" height="100%" onclick="click8();" />
+    <img src="static\waldo9.jpg" width="600" height="100%" onclick="onClick(8);" />
     <button type="button" 
     style="position: relative;  right: -440px; top: -240px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -326,7 +215,7 @@
     <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 9</p> <div id="result9" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo10.jpg" width="600" height="100%" onclick="click9();" />
+    <img src="static\waldo10.jpg" width="600" height="100%" onclick="onClick(9)";" />
     <button type="button" 
     style="position: relative;  right: -388px; top: -160px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -334,7 +223,7 @@
     <br>
   <div  id="rcorners1" style="position: static; left: 10px; top: 40px;"> 
       <p float="right" id="rcorners2">level: 10</p> <div id="result10" style="float:right; border-radius: 15px; background: white; padding: 10px; width: auto; font-size: 20px; font-weight: bold;"></div>
-    <img src="static\waldo11.jpg" width="600" height="100%" onclick="click10();" />
+    <img src="static\waldo11.jpg" width="600" height="100%" onclick="onClick(10);" />
     <button type="button" 
     style="position: relative;  right: -135px; top: -120px;" 
     onclick="alert('You found waldo!')"> . </button>
@@ -349,5 +238,20 @@
 </div>
 
 </body>
+
+<script>
+  var clickCounts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+  for(var i = 1; i <= 10; i ++){
+    if(typeof (Storage) !== "undefined"){
+      if(localStorage.getItem("clickCount") !== null){
+        clickCounts = JSON.parse(localStorage.getItem("clickCount"));
+      }
+      document.getElementById("result" + i).innerHTML = "You made " + clickCounts[i - 1] + " failed attempts";
+    }else{
+      document.getElementById("result" + i).innerHTML = "your browser does not support web storage";
+    }
+  }
+</script>
 
 </html>
