@@ -24,18 +24,23 @@ li a {
   background-color: #dddddd;
 }
 
-* {
+/* * {
             margin: 0;
             padding: 0;
-        }
-        .imgbox {
+        } */
+        /* .imgbox {
             display: grid;
             height: 100%;
+            width:100%;
         }
         .center-fit {
-            max-width: 100%;
+            max-width: 100vh;
             max-height: 100vh;
             margin: auto;
+        }
+        img.center-fit {
+          height: 100vh;
+          width: 100vh;
         }
         button {
           background-color: aqua;
@@ -45,13 +50,71 @@ li a {
           outline: none;
           position: absolute;
           font-size: 20px;
-  }
-
+          width:30%;
+          height:30%;
+        } */
   
+  /* img{
+    cursor: pointer;
+    border-radius: 25px
+  } */
+  button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+    font-size: 20px;
+    height:32px;
+    width:25px;
+  }
   img{
     cursor: pointer;
     border-radius: 25px
   }
+
+  #rcorners1 {
+    margin: auto;
+    border-radius: 25px;
+    padding: 20px; 
+    width: 850px;
+  }
+  #rcorners2 {
+    border-radius: 15px;
+    background: white;
+    padding: 10px; 
+    width: auto;
+  }
+  #rcorners3 {
+    border-radius: 25px;
+    background: rgb(217, 50, 50);
+    padding: 20px; 
+    width: auto;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  p{
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    display:inline;
+    word-wrap: break-word;
+  }
+  #ps{
+    font-size: 20px;
+    font-weight: bold;
+    float: right;
+    border-radius: 15px;
+    background: white;
+    padding: 10px; 
+    width: auto;
+  }
+
+  :root{
+    --correct: 0;
+  }
+
 
 </style>
 
@@ -89,11 +152,20 @@ li a {
 <h1>Generate a Waldo</h1>
 <form method="post" action="/generate">
   <input type="submit" value="Generate Waldo" name="Generate Waldo"/>
-<div class="imgbox">
+<!-- <div class="imgbox">
     <img class="center-fit" src='/static/output.png'>
-    <button type="button" 
-    style="position: relative; left: {{value1}}px; bottom: {{value2}}px;"
-    onclick="alert('You found waldo!')"> . </button>
+    <button class = "center-fit" type="button" 
+    style="position:relative; left: {{value1}}px; bottom: {{value2}}px;"
+    onclick="alert('You found waldo!')"></button>
+</img> -->
+<div  id="rcorners1" class="rCorner"> 
+<div id="result2" class="failedAttempts"></div>
+  <img src="static\output.png" width="800px" height="100%" onclick="alert('You did not find waldo :(')" />
+  <button type="button" 
+  style="position: relative; left: {{value1}}px; bottom: {{value2}}px;" 
+  onclick="alert('You found waldo!')"></button>
+</div>
+
 </div>
   
 </body>
