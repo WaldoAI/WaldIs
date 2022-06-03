@@ -42,25 +42,45 @@
 
   <h1>Automatic Mode </h1>
   <div class="images">
+    {% if image1 %}
+    <img src= "{{image1}}" width="600" height="100%" />
+    {% else %}
     <img src="static/auto_images/1.jpg" width="600" height="100%" />
+    {% endif %}
     <div class="solve">
-      <button type="button">Solve</button>
-      <p class="time">Solved in _____ seconds</p>
+      <form method="post" name = "solve1" action="/auto">
+      <input type="submit"></input>
+      </form>
     </div>
+    {% if image2 %}
+    <img src= "{{image2}}" width="600" height="100%" />
+    {% else %}
     <img src="static/auto_images/2.jpg" width="600" height="100%" />
+    {% endif %}
     <div class="solve">
-      <button type="button">Solve</button>
-      <p class="time">Solved in _____ seconds</p>
+      <form method="post" name = "solve2" action="/auto">
+      <input type="submit"></input>
+      </form>
     </div>
+    {% if image3 %}
+    <img src= "{{image3}}" width="600" height="100%" />
+    {% else %}
     <img src="static/auto_images/3.jpg" width="600" height="100%" />
+    {% endif %}
     <div class="solve">
-      <button type="button">Solve</button>
-      <p class="time">Solved in _____ seconds</p>
+      <form method="post" name = "solve3" action="/auto">
+        <input type="submit"></input>
+        </form>
     </div>
+    {% if image4 %}
+    <img src= "{{image4}}" width="600" height="100%" />
+    {% else %}
     <img src="static/auto_images/4.jpg" width="600" height="100%" />
+    {% endif %}
     <div class="solve">
-      <button type="button">Solve</button>
-      <p class="time">Solved in _____ seconds</p>
+      <form method="post" name = "solve4" action="/auto">
+      <input type="submit"></input>
+      </form>
     </div>
   </div>
 </body>
