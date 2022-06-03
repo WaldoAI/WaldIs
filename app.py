@@ -4,7 +4,7 @@ from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from generate.maker import generate as generator
 from tempfile import mkdtemp
-#from model.find_wally import find_wally
+from model.find_wally import find_wally
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 import requests
@@ -43,8 +43,12 @@ def index():
 @app.route("/auto", methods =  ['GET','POST'])
 def auto():
     if request.method == "POST":
-            image2  = find_wally(requests.form.get("filename"))
-            return render_template("auto.html", image2 = image2)
+        
+        image1  = find_wally("static/auto_images/1.jpg")
+        image2  = find_wally("static/auto_images/2.jpg")
+        image3  = find_wally("static/auto_images/3.jpg")
+        image4  = find_wally("static/auto_images/4.jpg")
+        return render_template("auto.html", image1 = image1, image2 = image2, image3 = image3, image4 = image4)
     else:
         return render_template("auto.html")
 
