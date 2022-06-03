@@ -12,8 +12,8 @@ def load_image_into_numpy_array(image):
   return np.array(image.getdata()).reshape((im_height, im_width, 3)).astype(np.uint8)
 
 
-def find_wally(image_path):
-    model_path = './trained_model/frozen_inference_graph.pb'
+def find_wally(image_path, im_num):
+    model_path = 'model/trained_model/frozen_inference_graph.pb'
 
     detection_graph = tf.Graph()
     with detection_graph.as_default():
@@ -23,7 +23,7 @@ def find_wally(image_path):
             od_graph_def.ParseFromString(serialized_graph)
             tf.import_graph_def(od_graph_def, name='')
 
-    label_map = label_map_util.load_labelmap('./trained_model/labels.txt')
+    label_map = label_map_util.load_labelmap('model/trained_model/labels.txt')
     categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=1, use_display_name=True)
     category_index = label_map_util.create_category_index(categories)
 
@@ -54,3 +54,9 @@ def find_wally(image_path):
                 line_thickness=8)
 
             im = Image.fromarray(image_np)
+
+            new_path = image_path.replace(im_num, im_num + "_solved.jpg")
+
+            im.save(new_path)
+
+            return new_path
