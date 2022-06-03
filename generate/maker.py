@@ -18,7 +18,7 @@ imagearray = []
 print(directory_path)
 for backgrounds in glob.iglob(backgrounds_path + '/*.jpg', recursive=True):
     imagearray.append(Image.open(backgrounds))
-# num = 0
+# num = 49
 # for i in imagearray:
 #     i = i.resize((4000,4000))
 #     i.save(directory_path + "/" + str(num) + ".jpg",optimize=True,quality = 50)
