@@ -1,3 +1,4 @@
+from ast import Str
 from turtle import back
 import PIL
 import random
@@ -6,6 +7,8 @@ import glob
 from PIL import Image
 from sys import platform
 
+from numpy import imag
+
 IS_WINDOWS = platform == "win32"
 
 directory_path = os.path.dirname(__file__)
@@ -13,8 +16,13 @@ backgrounds_path = directory_path + "/backgrounds"
 #background = Image.open("C:\\Users\\Waldo\Desktop\\waldo maker\\background.jpeg")
 imagearray = []
 print(directory_path)
-for backgrounds in glob.iglob(backgrounds_path + '/*.png', recursive=True):
+for backgrounds in glob.iglob(backgrounds_path + '/*.jpg', recursive=True):
     imagearray.append(Image.open(backgrounds))
+# num = 0
+# for i in imagearray:
+#     i = i.resize((4000,4000))
+#     i.save(directory_path + "/" + str(num) + ".jpg",optimize=True,quality = 50)
+#     num+=1
 def generate():
     background = imagearray[random.randrange(0,len(imagearray))]
     background = background.resize((4000,4000))
@@ -32,7 +40,7 @@ def generate():
     background.paste(smalldo,coordinates,smalldo.convert('RGBA')
     )
     if IS_WINDOWS:
-        background.save(directory_path.replace('\\generate', '') + "\\static\\output.png")
+        background.save(directory_path.replace('\\generate', '') + "\\static\\output.jpg")
     else:
-        background.save(directory_path.replace('/generate', '') + "/static/output.png")
+        background.save(directory_path.replace('/generate', '') + "/static/output.jpg")
     return coordinates
